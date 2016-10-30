@@ -48,7 +48,7 @@ def getImage(name):
     for status in Cursor(api.user_timeline, screen_name=name, count=200).items():
         try:
             if 'extended_entities' in status._json:
-                for i in range(len(status.extended_entities)):
+                for i in range(len(status.extended_entities['media'])):
                     with open(name+'/'+status._json['extended_entities']['media'][i]['id_str']+'.jpg', "wb") as image:
                         image.write(request.urlopen(status._json['extended_entities']['media'][i]['media_url']).read())
                     draw(name,status._json['extended_entities']['media'][i]['id_str']+'.jpg',status.text)
