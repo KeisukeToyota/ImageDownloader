@@ -60,7 +60,7 @@ def getImage(name):
                 count += 1
         except:
             continue
-    print(str(count)+'\n')
+    print('Get count : '+str(count)+'\n')
     print('END')
 
 def draw(image_path,name,text):
