@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+import os
+import sys
+
+param = sys.argv
+os.system('python3 ' + os.path.abspath(os.path.dirname(__file__)) + '/lib/getImage.py ' + param[1])
